@@ -8,44 +8,54 @@
 <body>
 
 <?php
-
-if( isset ($_POST {'prenom'}))  
 {
+if( isset ($_POST ['prenom'])){
 echo 'Vous vous appelez '  .  $_POST {'prenom'};
 }
 
-if(empty( $_POST {'prenom'}))
-{
+else{
 
     echo 'Vous avez oubliez de renseigner votre prénom';
-}      
+} 
+
+}
 
 
-if(isset( $_POST {'Genre'}))
+{
+if(isset( $_POST ['Genre']))
 {
 echo ' et vous êtes de sexe ' . $_POST {'Genre'};
 }
 
-if(empty( $_POST {'Genre'}))
-{
+
+else{
 
     echo ' .Vous avez oubliez de renseigner votre genre';
 }      
+}
 
 
-if(isset( $_POST {'Pays'}))
+if(isset( $_POST ['Pays']))
 {
 echo '. Vous vivez actuellement en  ' . $_POST {'Pays'};
 }
 
-if(isset( $_POST {'newsletter'}))
+{
+if(isset( $_POST ['newsletter']))
 {
 echo ' et vous vous êtes abonné(e) à la newsletter. ' . $_POST {'newsletter'};
 }
+else{
+
+    echo ' .Vous vous n\'êtes pas abonné(e) à la newsletter.';
+}  
+}
 
 
-
-
+if(isset( $_POST ['mail']))
+{
+echo ' Pour finir vous avez bien renseigné votre adresse E-mail :' . $_POST {'mail'};
+}
 
 ?>
  <form action="formulaire.php" method="Post" name="formulaire">
@@ -79,6 +89,13 @@ echo ' et vous vous êtes abonné(e) à la newsletter. ' . $_POST {'newsletter'}
 <br>
 <label for="newsletter">newsletter</label> 
 <input type="checkbox" name="newsletter" value="">
+<br>
+<br>
+
+<label for="mail"> E-mail</label>
+<input type="email" name="mail" value="">
+
+
 
 <br>
 <br>
